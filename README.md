@@ -6,3 +6,5 @@ Record of BUG problems encountered every day,Solved and unsolved.
 让我们努力消除所有问题
 
 Let's try to get rid of all the problems.
+
+![image](https://github.com/JRMOS/daily-BUG/blob/master/nobug.png)
