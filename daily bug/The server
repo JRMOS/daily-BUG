@@ -11,4 +11,15 @@ A1/最后研究了2小时，是 Remote Control double-slit experiment(远程双�
 Q2/新买了一个黑色开放式机箱接上后，电脑完全开不了机，CPU风扇都不转，接过电源绿黑线正常运转，排除电源问题。
 玄学地方：在我一个白色机箱上放着主板就没事，能正常开机。
 
-A1/经过1.5小时研究，主板底部针脚不能直接跟铁质机箱直接接触否则不开电，需在底部放置黄铜材质针脚。而白色机箱上放板就没事可能是由于白色机箱上有漆面。
+A2/经过1.5小时研究，主板底部针脚不能直接跟铁质机箱直接接触否则不开电，需在底部放置黄铜材质针脚。而白色机箱上放板就没事可能是由于白色机箱上有漆面。
+
+
+Q3/EFI VMware Virtual SCSI Hard Drive (0.0) … unsuccessful
+When I power on the VM VMWare gives the following unsuccessful comments:
+EFI VMware Virtual SCSI Hard Drive (0.0) ... unsuccessful
+EFI VMware Virtual IDE CDROM Drive (IDE 1.0) ... unsuccessful
+Could you please help me. how to solve this errors
+
+A3/去掉VMX文件里面的 在你创建的虚拟机目录下
+firmware="efi"
+保存重启虚拟机
