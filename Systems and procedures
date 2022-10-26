@@ -5,3 +5,36 @@ A:It may be related to your system version. You can go back to 2203
 Installation package download
 安装包下载
 https://pan.baidu.com/s/1m-Tic3zFyGtuXTriG0L7sw?pwd=ztur  提取码：ztur
+
+
+360驱动清理残留
+
+360驱动原版会有残留的服务项删不了，删除的话得用特殊方法。
+新建文本，输入下面的代码，保存，把后缀txt改成bat，运行即可。
+
+@ECHO OFF
+taskkill /f /im DrvInst64.exe >NUL 2>NUL
+taskkill /f /im 360DrvMgr.exe >NUL 2>NUL
+taskkill /f /im ScriptExecute.exe >NUL 2>NUL
+taskkill /f /im ComputerZService.exe >NUL 2>NUL
+reg delete "HKCU\SOFTWARE\360DrvMgr" /f >NUL 2>NUL
+reg delete "HKCU\SOFTWARE\LiveUpdate360" /f >NUL 2>NUL
+reg delete "HKCU\SOFTWARE\KitTipCLSID" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\360DrvMgr" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\360Safe\Liveup" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\LiveUpdate360" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\360DrvMgr" /f /reg:32 >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\LiveUpdate360" /f /reg:32 >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\360Safe\Liveup" /f /reg:32 >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Tracing\360DrvMgr_RASAPI32" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Tracing\360DrvMgr_RASAPI32" /f /reg:32 >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Tracing\360DrvMgrInstaller_beta_RASAPI32" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Tracing\360DrvMgrInstaller_beta_RASAPI32" /f /reg:32 >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\360DrvMgr" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\360DrvMgr.exe" /f >NUL 2>NUL
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\360DrvMgr" /f /reg:32 >NUL 2>NUL
+rd /s /q "%AppData%\360safe\LiveUpdateLog" 2>NUL
+rd /s /q "%AppData%\360DrvMgr" 2>NUL
+rd /s /q "%AppData%\lds" 2>NUL
+rd /s /q "%TEMP%\drvmgr" 2>NUL
+Exit
